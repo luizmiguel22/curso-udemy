@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            background-color: mediumslateblue;
+        }
+
+        .l {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="l">
+        <input type="number" id="oii">
+        <input type="button" value="Calcular" onclick="clicar()">
+        <h1>meu numero é <span id="oi">0</span></h1>
+        <div id="resu"></div>
+    </div>
+    <script>
+        function clicar() {
+            let num = document.getElementById("oii").value
+            document.getElementById("oi").textContent = num
+
+
+            let resu = document.getElementById("resu")
+            resu.innerHTML=''
+
+            resu.innerHTML += `seu numero arredodndado pra baixo ${Math.floor(num)}<br>`
+
+            resu.innerHTML += `seu numero arredodndado pra cima ${Math.ceil(num)}<br>`
+
+            resu.innerHTML += `é inteiro ${Number.isInteger(num)}<br>`
+
+            resu.innerHTML += `é NaN${Number.isNaN(num)}<br>`
+
+            resu.innerHTML += `a raiz quadrada do seu numero é ${num ** 0.5}<br>`
+        }
+    </script>
+</body>
+
+</html>
